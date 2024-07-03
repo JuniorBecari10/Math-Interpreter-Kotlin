@@ -15,9 +15,7 @@ class Parser(private val tokens: List<Token>) {
         3 -> this.group(precedence)
         4 -> this.literal()
 
-        else -> {
-            internalError("Invalid precedence: $precedence")
-        }
+        else -> internalError("Invalid precedence: $precedence")
     }
 
     private fun binary(precedence: Int, vararg operators: TokenType): AstNode {

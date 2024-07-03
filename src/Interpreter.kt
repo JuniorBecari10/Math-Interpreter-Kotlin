@@ -1,4 +1,5 @@
-typealias Data = Double
+private typealias Data = Double
+
 class Interpreter(private val node: AstNode): NodeVisitor<Data> {
     fun interpret(): Result<Data> =
         try {
